@@ -1,0 +1,80 @@
+﻿@model jobmvcproject.Models.CompanyInsert
+@{
+    ViewBag.Title = "Company_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Company Registration</h1>
+<div>
+    @using (Html.BeginForm("Company_Click", "CompanyReg", FormMethod.Post))
+    {
+        <div>
+            <label>Name:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cname)
+            @Html.ValidationMessageFor(m => m.cname)
+        </div>
+        <div>
+            <label>Address:</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.cadd)
+            @Html.ValidationMessageFor(m => m.cadd)
+        </div>
+        <div>
+            <label>Email:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cemail)
+            @Html.ValidationMessageFor(m => m.cemail)
+        </div>
+        <div>
+            <label>Phone Number:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cphn)
+            @Html.ValidationMessageFor(m => m.cphn)
+        </div>
+        <div>
+            <label>State:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.state)
+            @Html.ValidationMessageFor(m => m.state)
+        </div>
+        <div>
+            <label>District:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.dis)
+            @Html.ValidationMessageFor(m => m.dis)
+        </div>
+        <div>
+            <label>Username:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.uname)
+            @Html.ValidationMessageFor(m => m.uname)
+        </div>
+        <div>
+            <label>Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.pwd)
+
+        </div>
+        <div>
+            <label>Confirm Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cpwd)
+            @Html.ValidationMessageFor(m => m.cpwd)
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.adminmsg)
+        </div>
+    }
+
+</div>

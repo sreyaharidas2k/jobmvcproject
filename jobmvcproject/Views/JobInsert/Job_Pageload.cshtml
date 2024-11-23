@@ -1,0 +1,98 @@
+﻿@model jobmvcproject.Models.JobInsert
+@{
+    ViewBag.Title = "Job_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Job Registration</h1>
+<div>
+    @using (Html.BeginForm("Job_Click", "JobInsert", FormMethod.Post))
+    {
+        
+        <div>
+            <label>Job Title:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.title)
+            @Html.ValidationMessageFor(m => m.title)
+        </div>
+        <div>
+            <label>Job Desc:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.desc)
+            @Html.ValidationMessageFor(m => m.desc)
+        </div>
+        <div>
+            <label>Experience:</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.exp)
+            @Html.ValidationMessageFor(m => m.exp)
+        </div>
+        <div>
+            <label>Skills:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.skill)
+            @Html.ValidationMessageFor(m => m.skill)
+        </div>
+        <div>
+            <label>Location:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.loc)
+            @Html.ValidationMessageFor(m => m.loc)
+        </div>
+
+        <div>
+            <label>Salary:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.salary)
+            @Html.ValidationMessageFor(m => m.salary)
+        </div>
+        <div>
+            <label>Job Type:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.type)
+            @Html.ValidationMessageFor(m => m.type)
+        </div>
+        <div>
+            <label>Last Date:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.lastdate, new { Type = "date" })
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>
+
+@*<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.2.js" type="text/javascript"></script>
+<script>
+    $('#district-ddl').append('<option>Select District</option>');
+     $('#state-ddl').change(function () {
+         var stateId = $(this).val();
+         $.ajax({
+             url: '@Url.Action("GetDistricts", "DBInsert")',
+             //type: 'GET',
+             data: { stateId: stateId },
+             //dataType: 'json',
+             success: function (data) {
+                 $('#district-ddl').empty();
+                 $('#district-ddl').append('<option>Select District</option>');
+                 $.each(data, function (index, item) {
+                     $('#district-ddl').append('<option value="' + item.Value + '">' + item.Text + '</option>');
+                 });
+             }
+         });
+     });
+</script>
+
+<script>
+
+</script>*@

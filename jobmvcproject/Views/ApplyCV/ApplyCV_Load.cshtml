@@ -1,0 +1,28 @@
+﻿@model jobmvcproject.Models.Apply
+@{
+    ViewBag.Title = "ApplyCV_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ApplyCV_Load</h2>
+
+<div>
+    @using (Html.BeginForm("ApplyCV_Click", "ApplyCV", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.TextBox("file", "", new { Type = "file" })
+        </div>
+
+        <div>
+            <input type="submit" value="Upload" />
+        </div>
+
+    }
+
+
+
+    <div>
+        @Html.ActionLink("Back To Job Page", "JobList_Pageload", "JobList")
+    </div>
+</div>
+
